@@ -4,6 +4,8 @@ const axios = require('axios')
 const yesterdayRoute = require('./yesterday');
 const countriesRoute = require('./countries');
 const countriesCodeRoute = require('./countriesCode');
+const dailyRoute = require('./daily');
+const dailyWithDateRoute = require('./{daily}');
 
 router.get('/', async(req, res) => {
     const { data } = await axios.get('https://covid19.who.int/page-data/index/page-data.json');
@@ -20,6 +22,7 @@ router.get('/', async(req, res) => {
 router.get('/yesterday', yesterdayRoute)
 router.get('/countries', countriesRoute)
 router.get('/countries/:code', countriesCodeRoute)
-
+router.get('/daily', dailyRoute)
+router.get('/daily/:date', dailyWithDateRoute)
 
 module.exports = router;

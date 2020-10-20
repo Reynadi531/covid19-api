@@ -1,7 +1,7 @@
 const axios = require('axios')
 const alpha2code = require('./alpha2code.json')
 
-module.exports = async(countriesCode) => {
+const fetchCountryV1 = async(countriesCode) => {
     const { data } = await axios.get('https://covid19.who.int/page-data/index/page-data.json');
     const rootData = data.result.pageContext.rawDataSets;
     const countriesData = rootData.byCountry.rows.map(data => {
@@ -22,8 +22,13 @@ module.exports = async(countriesCode) => {
                 result = element
             }
         });
+        result = result ? {} : null
     }else{
         result = countriesData;
     }
     return result;
+}
+
+module.exports = {
+    fetchCountryV1
 }

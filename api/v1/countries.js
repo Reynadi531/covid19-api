@@ -1,5 +1,5 @@
-const fetchCountries = require('../../util/fetchCountriesV1');
+const { fetchCountryV1 } = require('../../util/fetchCountries');
 
 module.exports = async(req, res) => {
-    res.json(await fetchCountries())
+    res.json(await fetchCountryV1())
 }
