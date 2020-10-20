@@ -1,6 +1,6 @@
 # COVID-19 API
 
-This API was made cause of my curiosity what i take to get a data from official provider such as WHO. I use chrome developer tools to capture request and all of data in v1 from [here](https://covid19.who.int/page-data/index/page-data.json). Oh by the way if you find this API is slow that because it has to downlaod 2mb json file and i'm not setup cache system for it also i put this API in vercel at singapore region, if the latency was the problem you can deploy it by yourself in vercel and try others regions. This API still in progress for v2, the goal is to have one stop solution when came to search for COVID-19 API
+This API was made cause of my curiosity what i take to get a data from official provider such as WHO. I use chrome developer tools to capture request and all of data in v1 from [here](https://covid19.who.int/page-data/index/page-data.json). Oh by the way if you find this API is slow that because it has to downlaod 2mb json file and i'm not setup cache system for it. Also i put this API in vercel at singapore region, if the latency was the problem you can deploy it by yourself in vercel and try others regions. This API still in progress for v2, the goal is to have one stop solution when came to search for COVID-19 API
 
 ## Deployment
 >[JSON API](https://api-covid19.now.sh/)<br>
