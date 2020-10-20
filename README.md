@@ -21,7 +21,7 @@ This API was made cause of my curiosity what i take to get a data from official 
     > This endpoint gonna return summary data of all countires that have been affected
 * [/api/v1/countries/{country}](https://api-covid19.now.sh/api/v1/countries/{country})
     > This endpoint gonna return summary data of specify country.<br>
-    > Example: [/api/v1/countires/US](https://api-covid19.now.sh/api/v1/countries/US)
+    > Example: [/api/v1/countries/US](https://api-covid19.now.sh/api/v1/countries/US)
 
 ## License
 
