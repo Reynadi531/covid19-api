@@ -7,7 +7,7 @@ This API was made cause of my curiosity what i take to get a data from official 
 >[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2FReynadi531%2Fcovid19-api%2F)
 
 ## Endpoints
-### v1(WHO)
+### v1 (WHO)
 * [/api/v1](https://api-covid19.now.sh/api/v1)
     > This endpoint gonna return the latest summary data 
 * [/api/v1/yesterday](https://api-covid19.now.sh/api/v1/yesterday)
@@ -15,12 +15,12 @@ This API was made cause of my curiosity what i take to get a data from official 
 * [/api/v1/daily](https://api-covid19.now.sh/api/v1/daily)
     > This endpoint gonna return summary data from start of pandemic
 * [/api/v1/daily/{date}](https://api-covid19.now.sh/api/v1/daily/{date})
-    > This endpoint gonna return summary data of specific time.
+    > This endpoint gonna return summary data of specific time.<br>
     > Example: [/api/v1/daily/2020-10-19](https://api-covid19.now.sh/api/v1/daily/2020-10-19)
 * [/api/v1/countries](https://api-covid19.now.sh/api/v1/countries)
     > This endpoint gonna return summary data of all countires that have been affected
 * [/api/v1/countries/{country}](https://api-covid19.now.sh/api/v1/countries/{country})
-    > This endpoint gonna return summary data of specify country
+    > This endpoint gonna return summary data of specify country.<br>
     > Example: [/api/v1/countires/US](https://api-covid19.now.sh/api/v1/countries/US)
 
 ## License
