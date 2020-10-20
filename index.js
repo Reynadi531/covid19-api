@@ -17,14 +17,23 @@ app.get('/', (req, res) => {
     const url = `${req.protocol}://${req.hostname}${req.hostname == 'localhost' ? `:${PORT}` : ''}`;
     res.json({
         "messages": "Welcome to COVID-19 API | One stop solution for COVID-19 API",
+        "source and documentation": "https://github.com/Reynadi531/covid19-api",
         "endpoints": {
-            "v1": [
-                `${url}/api/v1`,
-                `${url}/api/v1/yesterday`,
-                `${url}/api/v1/daily`,
-                `${url}/api/v1/countries/`,
-                `${url}/api/v1/countries/{countryCode}`,
-            ]
+            "v1": {
+                "summary" : `${url}/api/v1`,
+                "summary yesterday": `${url}/api/v1/yesterday`,
+                "daily": `${url}/api/v1/daily`,
+                "daily specific time" : {
+                    "endpoint": `${url}/api/v1/daily/{time}`,
+                    "example": `${url}/api/v1/daily/2020-10-19`,
+                },
+                "country": `${url}/api/v1/countries/`,
+                "specific country": {
+                    "endpoint": `${url}/api/v1/countries/{countryCode}`,
+                    "exmpale": `${url}/api/v1/countries/US`,
+                    "messages": "only work in alpha 2 code"
+                }
+            }
         }
     });
 })

@@ -1,10 +1,8 @@
-const axios = require('axios');
-const { permittedCrossDomainPolicies } = require('helmet');
+const { v1fetcher } = require('./mainFetcher');
 
 const fetchDailyV1 = async(date) => {
-    const { data } = await axios.get('https://covid19.who.int/page-data/index/page-data.json');
-    const rootData = data.result.pageContext.rawDataSets;
     let result = {};
+    const rootData = await v1fetcher()
     const dailyData = rootData.byDay.rows.map(data => {
         return {
             "day": data[0],
@@ -25,20 +23,12 @@ const fetchDailyV1 = async(date) => {
             });
         }else if(date.length <= 11) {
             dailyData.forEach(element => {
-                let dateDisasamble = date.split('-') 
-                // console.log(dateDisasamble)
-                // console.log(element.date.getFullYear());
-                // console.log(element.date.getMonth())
-                // console.log(Number(dateDisasamble[1] - 1))
-                console.error(dateDisasamble[0], dateDisasamble[1], dateDisasamble[2])
-                if (element.date.getFullYear() == Number(dateDisasamble[0]) && element.date.getMonth() == Number(dateDisasamble[1]-1) && element.date.getDate() == Number(dateDisasamble[2])) {
+                if (element.date.toISOString().split('T')[0] == date) {
                     result = element
-                }else {
-                    result = null
                 }
             });
         }else{
-            result = null
+            result = null;
         }
     }else{
         result = dailyData
